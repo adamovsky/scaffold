@@ -1,0 +1,5 @@
+$arial: Arial;
+
+@mixin bodyText {
+    font-family: $arial;
+}

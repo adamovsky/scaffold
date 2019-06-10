@@ -1,0 +1,10 @@
+@import '../../styles/global.scss';
+
+.app {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-width: 320px;
+  width: 100%;
+}
