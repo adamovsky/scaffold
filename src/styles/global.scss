@@ -1,6 +1,47 @@
 @import './colors.scss';
 @import './fonts.scss';
 @import 'mixins/breakpoints.scss';
-@import 'mixins/center.scss';
-@import 'mixins/clearfix.scss';
-@import 'mixins/layout.scss';
+@import 'mixins/lineclamp.scss';
+@import 'mixins/order.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $backgroundColor;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-stretch: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+button {
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

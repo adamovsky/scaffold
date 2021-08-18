@@ -1,0 +1,32 @@
+## Conventions
+
+-   Do not put any positioning CSS (e.g. `top`, `left`) inside a component's outermost styles.
+-   Only use CSS properties that are absolutely necessary. Do not add superfluous styles.
+-   Do not use CSS shorthand properties as it makes it harder to override.
+-   Whenever possible break raw HTML blocks into reusable React Components.
+-   Try not to use `top` and `left`, instead use margins.
+-   Try to generally give elements only top and left margins for positioning purposes.
+-   Make sure to get the color hex values from the design (do not guess / eyeball the color).
+-   Always use the semantic colors from `styles/colors.scss`, never the color variables directly.
+-   When defining a new font, include the responsiveness in the mixin.
+-   Always use the optional chaining operator.
+-   Always reference files via their absolute path (e.g. `components/Logo`) rather than their relative path.
+-   Try not to set fixed heights, allow content to define height.
+-   Only import `global.scss` into your `styles.module.scss`.
+-   Try not to nest CSS selectors unless they are pseudo-selectors (e.g. `:hover`).
+-   Always assign a class name to the root element of a component that reflects the component name.
+-   Consumer of component controls positioning, spacing, and z-index.
+-   Use SVGs for vector graphics.
+-   Use JPEGs for photos.
+-   Use PNGs for icons needing opacity.
+-   Write text in plain English casing and use CSS to style it (e.g. uppercase).
+-   Do not use switch statements.
+-   Do not spread props into a component, list them out.
+-   Introduce CSS properties in the right breakpoints when they are needed, not sooner.
+-   Anything layout related should use CSS grids.
+-   Put any configurable variables (e.g. paths, URLs) that are not coming from CMS into .env.sample
+-   If component has an image call it `image` followed by its respective extension.
+-   Multiple image files should live in an `images/` sub-folder of component.
+-   Move all service calls to a file called `data.js` inside the page folder
+-   Move all constants to a file called `constants.js` inside the component folder
+-   Move all component logic to a file called `index.js` inside the component folder

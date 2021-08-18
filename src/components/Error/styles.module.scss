@@ -1,0 +1,35 @@
+@import '../../styles/global.scss';
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 50px 165px;
+    max-width: 545px;
+    padding-top: 60px;
+}
+
+.error {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.heading1 {
+    margin-top: 39px;
+    text-align: center;
+}
+
+.text {
+    margin-top: 14px;
+    text-align: center;
+}
+
+@include tabletAndAbove {
+    .container {
+        margin: 0 200px 245px;
+        padding-top: 140px;
+    }
+}

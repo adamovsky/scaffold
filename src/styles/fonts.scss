@@ -1,5 +1,3 @@
-$arial: Arial;
+@import './mixins/breakpoints.scss';
 
-@mixin bodyText {
-    font-family: $arial;
-}
+$arial: Arial;

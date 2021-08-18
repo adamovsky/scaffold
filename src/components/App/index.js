@@ -1,24 +1,23 @@
-import React, { PureComponent } from 'react';
-import { Route } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
-import MainLayout from '../../layout/MainLayout';
+import Spinner from 'components/Spinner';
+import MainLayout from 'layouts/MainLayout';
 
-import WelcomePage from '../../pages/WelcomePage';
+const loading = <Spinner />;
 
-import styles from './styles.module.scss';
-
-class App extends PureComponent {
-    render() {
-        return (
-            <div className={ styles.app }>
-                <MainLayout>
-                    <Route exact path="/"
-                        render={ (props) => <WelcomePage /> }
-                    />
-                </MainLayout>
-            </div>
-        );
-    }
-}
+const App = () => (
+    <BrowserRouter>
+        <Suspense fallback={loading}>
+            <Switch>
+                <Route
+                    path="/"
+                    name="Welcome"
+                    render={props => <MainLayout {...props} />}
+                />
+            </Switch>
+        </Suspense>
+    </BrowserRouter>
+);
 
 export default App;

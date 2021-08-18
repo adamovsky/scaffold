@@ -1,0 +1,7 @@
+@mixin order($from, $to) {
+    @for $i from $from through 12 {
+        &:nth-child(#{$i}) {
+            order: $i;
+        }
+    }
+}
