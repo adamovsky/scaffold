@@ -1,0 +1,24 @@
+{
+    "arrowParens": "avoid",
+    "endOfLine": "lf",
+    "experimentalBabelParserPluginsList": ["jsx", "typescript"],
+    "importOrder": [
+        "^@",
+        "^(components/)",
+        "^(contexts/)",
+        "^(layouts/)",
+        "^(pages/)",
+        "^(styles/)",
+        "^(utilities/)",
+        "(.jpg)$",
+        "(.png)$",
+        "(.svg)$",
+        "^(?!(./styles))(./)",
+        "^(./styles)"
+    ],
+    "importOrderSeparation": true,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "none"
+}

@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+const errorMessage = `
+ ❌ The commit message is not in the correct format.  Please correct the message to follow the following format:
+
+    AB#1234: Commit message
+`;
+
+const fs = require('fs');
+const path = require('path');
+
+const commitMessageFile = process.argv[2];
+const commitMessage = fs.readFileSync(path.resolve(__dirname, `../${commitMessageFile}`), {encoding:'utf8', flag:'r'});
+
+const regex = /^AB#[0-9]+: .+/;
+
+if (!regex.test(commitMessage)) {
+    console.error(errorMessage);
+
+    process.exit(1);
+}

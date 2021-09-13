@@ -1,9 +1,8 @@
-# Project
+# ae-consumer-platform
 
-# Setup
+## Setup
 
 ```
-npm install
-npm start
+yarn
+yarn start
 ```
-# Links
