@@ -48,6 +48,7 @@
 -   Use PNGs for icons needing opacity.
 -   If component has an image call it `image` followed by its respective extension.
 -   Multiple image files should live in an `images/` sub-folder of component.
+- Do not inline SVGs.
 
 
 # PR Etiquette
@@ -67,7 +68,7 @@ An engineer should be able to quickly and accurately review a PR within a few mi
 
 ## PR Sequence
 
-To solve a problem we want to break it down from the outside inward.  
+To solve a problem we want to break it down from the outside inward.
 
 ### Example
 
