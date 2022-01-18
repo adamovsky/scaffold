@@ -12,6 +12,7 @@
 ## CSS
 
 -   Do not put any positioning CSS (e.g. `top`, `left`) inside a component's outermost styles.
+-   Do not put any margin CSS (e.g. `margin-top`, `margin-bottom`) inside a component's outermost styles.
 -   Only use CSS properties that are absolutely necessary. Do not add superfluous styles.
 -   Do not use CSS shorthand properties as it makes it harder to override.
 -   Try not to use `top` and `left`, instead use margins.
@@ -27,6 +28,8 @@
 -   Write text in plain English casing and use CSS to style it (e.g. uppercase).
 -   Introduce CSS properties in the right breakpoints when they are needed, not sooner.
 -   Anything layout related should use CSS grids.
+-   Use `px` measuring unit by default.
+-   Do not mix different measuring units
 
 ## Javascript
 
@@ -48,8 +51,7 @@
 -   Use PNGs for icons needing opacity.
 -   If component has an image call it `image` followed by its respective extension.
 -   Multiple image files should live in an `images/` sub-folder of component.
-- Do not inline SVGs.
-
+-   Do not inline SVGs.
 
 # PR Etiquette
 
