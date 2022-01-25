@@ -1,4 +1,4 @@
-# ae-consumer-platform
+# React Scaffold
 
 ## Setup
 
