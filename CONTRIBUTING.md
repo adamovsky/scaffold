@@ -49,6 +49,7 @@
 -   Move all constants to a file called `constants.js` inside the component folder.
 -   Move all component logic to a file called `index.js` inside the component folder.
 -   Each HTML tag is an opportunity to break it out into its own component.
+-   Do not allow overriding CSS of an internal component of a composed component.
 
 ## Assets
 
