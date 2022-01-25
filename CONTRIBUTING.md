@@ -8,6 +8,7 @@
 ## HTML
 
 -   Whenever possible break raw HTML blocks into reusable React Components.
+-   Do not style HTML tags globally unless for reset purposes.
 
 ## CSS
 
@@ -33,16 +34,21 @@
 
 ## Javascript
 
--   Always use the optional chaining operator.
+-   Always use the optional chaining operator instead of binary operator.
 -   Always reference files via their absolute path (e.g. `components/Logo`) rather than their relative path.
 -   Do not use switch statements.
 -   Do not spread props into a component, list them out.
 -   Put any configurable variables (e.g. paths, URLs) that are not coming from CMS into .env.sample
--   Each component must have an associated storybook file (`stories.js`).
+
+## React
+
+-   Introduce loop construct for components only if more than three items.
 -   Pages and layouts do NOT need an associated storybook file.
+-   Each component must have an associated storybook file (`stories.js`).
 -   Move all service calls to a file called `data.js` inside the page folder
--   Move all constants to a file called `constants.js` inside the component folder
--   Move all component logic to a file called `index.js` inside the component folder
+-   Move all constants to a file called `constants.js` inside the component folder.
+-   Move all component logic to a file called `index.js` inside the component folder.
+-   Each HTML tag is an opportunity to break it out into its own component.
 
 ## Assets
 
