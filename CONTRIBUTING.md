@@ -1,4 +1,4 @@
-## Conventions
+# Conventions
 
 
 ## Process
@@ -95,3 +95,7 @@ Let's take a page with a form on it.
 * PR #4: Connect form to API
 
 This sequence makes every solution isolated and therefore easy to review, troubleshoot, and cherry-pick for whatever reason (roll-back, move to another branch, etc)
+
+# Opinions
+
+-    Favor CSS modules using SCSS rather than styled components.
