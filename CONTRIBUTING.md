@@ -1,5 +1,6 @@
 # Conventions
 
+All these conventions are meant to provide cues for discussions. If we ever need to break any of these, it does not mean we _can not_ do it, it just means we _should not_. Therefore it should be a cue for the engineer to initiate a wider discussion to see if overriding these guidelines is either the right thing to do, or if there is a better way in handling the issue at hand.
 
 ## Process
 
@@ -52,6 +53,7 @@
 -   Move all component logic to a file called `index.js` inside the component folder.
 -   Each HTML tag is an opportunity to break it out into its own component.
 -   Do not allow overriding CSS of an internal component of a composed component.
+-   No component should ever need to have over 100 lines of code.
 
 ## Assets
 
