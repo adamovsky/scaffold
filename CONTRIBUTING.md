@@ -31,6 +31,7 @@
 -   Anything layout related should use CSS grids.
 -   Use `px` measuring unit by default.
 -   Do not mix different measuring units
+-   Never ever use `!important` (instead learn about CSS specificity).
 
 ## Javascript
 
@@ -39,6 +40,7 @@
 -   Do not use switch statements.
 -   Do not spread props into a component, list them out.
 -   Put any configurable variables (e.g. paths, URLs) that are not coming from CMS into .env.sample
+-   Only introduce functionality you need _now_ (not in the possible future).
 
 ## React
 
@@ -59,6 +61,10 @@
 -   If component has an image call it `image` followed by its respective extension.
 -   Multiple image files should live in an `images/` sub-folder of component.
 -   Do not inline SVGs.
+
+# PR Contents
+
+-   Always include an integration proving introduced functionality is actually needed.
 
 # PR Etiquette
 
