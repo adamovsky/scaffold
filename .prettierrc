@@ -8,6 +8,7 @@
         "^(contexts/)",
         "^(layouts/)",
         "^(pages/)",
+        "^(typings)",
         "^(styles/)",
         "^(utilities/)",
         "(.jpg)$",
