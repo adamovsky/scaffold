@@ -17,6 +17,7 @@
         "^(./styles)"
     ],
     "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
     "semi": true,
     "singleQuote": true,
     "tabWidth": 4,
