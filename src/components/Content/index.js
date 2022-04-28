@@ -1,15 +1,12 @@
 import { Suspense } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import Spinner from 'components/Spinner';
 import Home from 'pages/Home';
 import InternalServerError from 'pages/InternalServerError';
 import NotFoundError from 'pages/NotFoundError';
 
-import {
-    HOME,
-    INTERNAL_SERVER_ERROR
-} from 'utilities/routes';
+import { HOME, INTERNAL_SERVER_ERROR } from 'utilities/routes';
 
 import styles from './styles.module.scss';
 
@@ -18,21 +15,16 @@ const loading = <Spinner />;
 const Content = () => (
     <main className={styles.content}>
         <Suspense fallback={loading}>
-            <Switch>
-                <Switch>
-                    <Route exact path={HOME}>
-                        <Home />
-                    </Route>
+            <Routes>
+                <Route element={<Home />} path={HOME} />
 
-                    <Route exact path={INTERNAL_SERVER_ERROR}>
-                        <InternalServerError />
-                    </Route>
+                <Route
+                    element={<InternalServerError />}
+                    path={INTERNAL_SERVER_ERROR}
+                />
 
-                    <Route path="*">
-                        <NotFoundError />
-                    </Route>
-                </Switch>
-            </Switch>
+                <Route element={<NotFoundError />} path="*" />
+            </Routes>
         </Suspense>
     </main>
 );

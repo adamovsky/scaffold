@@ -1,9 +1,11 @@
 import Error from './index';
 
-export default {
-    title: 'Error',
-    component: Error
+const story = {
+    component: Error,
+    title: 'Error'
 };
+
+export default story;
 
 const Template = args => <Error {...args} />;
 

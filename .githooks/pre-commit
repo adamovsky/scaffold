@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+
+const execSync = require('child_process').execSync;
+
+const runCommand = (command, onSuccess, onFailure) => {
+    try {
+        const output = execSync(command, { encoding: 'utf-8' });
+
+        console.log(output);
+
+        if (typeof onSuccess === 'function') {
+            onSuccess(output);
+        } else {
+            console.log(`============== ✅ ${command} is ok ==============\n`);
+        }
+    } catch (err) {
+        if (typeof onFailure === 'function') {
+            onFailure(err);
+        } else {
+            console.log(
+                `============== Please run: 👉 ${command}  ==============\n`
+            );
+        }
+
+        throw new Error('Pre-commit command failed.');
+    }
+};
+
+const hook = () => {
+    process.env['CI'] = true;
+
+    const stagedFilesList = execSync(
+        'git diff --name-only --cached --diff-filter=d',
+        { encoding: 'utf-8' }
+    );
+
+    const stagedFiles = stagedFilesList.split('\n').join(' ');
+
+    ['pnpm format:fix', 'pnpm lint:fix'].forEach(command => {
+        console.log(`Running ${command}...`);
+
+        runCommand(command);
+        execSync(`git add ${stagedFiles}`, { encoding: 'utf-8' });
+    });
+};
+
+hook();

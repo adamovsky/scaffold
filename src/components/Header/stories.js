@@ -1,8 +1,8 @@
 import Header from './index';
 
 const story = {
-    title: 'Header',
-    component: Header
+    component: Header,
+    title: 'Header'
 };
 
 export default story;

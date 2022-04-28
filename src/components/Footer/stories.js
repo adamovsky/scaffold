@@ -1,8 +1,8 @@
 import Footer from './index';
 
 const story = {
-    title: 'Footer',
-    component: Footer
+    component: Footer,
+    title: 'Footer'
 };
 
 export default story;

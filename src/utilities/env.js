@@ -8,7 +8,4 @@ const CONFIG = Object.keys(env)
         return accumulator;
     }, {});
 
-// new environment variables must be added below without the REACT_APP_ prefix
-export const {
-  BUILD_ENV
-} = CONFIG;
+export default CONFIG;
