@@ -4,6 +4,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Spinner from 'components/Spinner';
 import MainLayout from 'layouts/MainLayout';
 
+import './state';
+
 const loading = <Spinner />;
 
 const App = () => (

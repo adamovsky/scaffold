@@ -77,9 +77,9 @@ All these conventions are meant to provide cues for discussions. If we ever need
 
 ## PR Size
 
-A problem must be decomposed into a composition of small solutions.  Each solution should do one thing, and do that thing correctly, accurately, and predictably.  Each such small solution should come with its own PR.
+A problem must be decomposed into a composition of small solutions. Each solution should do one thing, and do that thing correctly, accurately, and predictably. Each such small solution should come with its own PR.
 
-A large PR is difficult to wrap one's mind around, therefore the code reviews will be less effective, and will require more effort from the reviewer.  The longer a reviewer is busy reviewing code, the less time the reviewer can work on solving other problems.  We do not want to hold up engineers with big PRs.
+A large PR is difficult to wrap one's mind around, therefore the code reviews will be less effective, and will require more effort from the reviewer. The longer a reviewer is busy reviewing code, the less time the reviewer can work on solving other problems. We do not want to hold up engineers with big PRs.
 
 An engineer should be able to quickly and accurately review a PR within a few minutes.
 
@@ -91,13 +91,13 @@ To solve a problem we want to break it down from the outside inward.
 
 Let's take a page with a form on it.
 
-* PR #1: Page with an empty form container
-* PR #2: Build out the UI for the form
-* PR #3: Form validation logic
-* PR #4: Connect form to API
+-   PR #1: Page with an empty form container
+-   PR #2: Build out the UI for the form
+-   PR #3: Form validation logic
+-   PR #4: Connect form to API
 
 This sequence makes every solution isolated and therefore easy to review, troubleshoot, and cherry-pick for whatever reason (roll-back, move to another branch, etc)
 
 # Opinions
 
--    Favor CSS modules using SCSS rather than styled components.
+-   Favor CSS modules using SCSS rather than styled components.

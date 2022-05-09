@@ -11,15 +11,13 @@ const runCommand = (command, onSuccess, onFailure) => {
         if (typeof onSuccess === 'function') {
             onSuccess(output);
         } else {
-            console.log(`============== ✅ ${command} is ok ==============\n`);
+            console.log(`✅ ${command} : ok \n`);
         }
     } catch (err) {
         if (typeof onFailure === 'function') {
             onFailure(err);
         } else {
-            console.log(
-                `============== Please run: 👉 ${command}  ==============\n`
-            );
+            console.log(`❌ ${command} : failed\n`);
         }
 
         throw new Error('Pre-commit command failed.');

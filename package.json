@@ -1,13 +1,16 @@
 {
     "name": "project",
     "version": "0.1.0",
+    "contributors": [
+        "Milan Adamovsky <milan.adamovsky@gmail.com> (https://github.com/adamovsky/scaffold.git)"
+    ],
     "private": true,
     "dependencies": {
-        "@reduxjs/toolkit": "^1.8.1",
         "react": "^18.1.0",
         "react-dom": "^18.1.0",
         "react-router-dom": "^6.3.0",
-        "react-scripts": "^5.0.1"
+        "react-scripts": "^5.0.1",
+        "recoil": "^0.7.3-alpha"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -74,7 +77,7 @@
         ]
     },
     "engines": {
-        "yarn": "^1.19"
+        "pnpm": ">=7"
     },
     "husky": {
         "hooks": {
