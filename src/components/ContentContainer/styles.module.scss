@@ -1,0 +1,15 @@
+@import 'styles/global.scss';
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    min-width: 375px;
+    width: 100%;
+}
+
+@include tabletAndAbove {
+    .contentContainer {
+        max-width: 1200px;
+    }
+}

@@ -16,13 +16,13 @@ const loading = <Spinner />;
 
 const { configAtom } = state.app.atoms;
 
-const Content = () => {
+const Content = ({ className = '' }) => {
     const config = useRecoilValue(configAtom);
 
     const { HOME, INTERNAL_SERVER_ERROR } = config;
 
     return (
-        <main className={styles.content}>
+        <main className={`${className} ${styles.content}`}>
             <Suspense fallback={loading}>
                 <Routes>
                     <Route element={<Home />} path={HOME} />

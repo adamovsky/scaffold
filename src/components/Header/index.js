@@ -1,10 +1,13 @@
-import Logo from 'components/Logo';
+import ContentContainer from 'components/ContentContainer';
+import HeaderContent from 'components/HeaderContent';
 
 import styles from './styles.module.scss';
 
 const Header = () => (
     <header className={styles.header}>
-        <Logo className={styles.logo} />
+        <ContentContainer>
+            <HeaderContent />
+        </ContentContainer>
     </header>
 );
 

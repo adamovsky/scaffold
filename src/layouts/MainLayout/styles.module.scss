@@ -1,8 +1,16 @@
-@import '../../styles/global.scss';
+@import 'styles/global.scss';
+
+.content {
+    align-self: flex-start;
+}
 
 .mainLayout {
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    min-width: 375px;
+    display: grid;
+    grid:
+        'header' min-content
+        'content' auto
+        'footer' min-content
+        / auto;
+    height: 100%;
 }

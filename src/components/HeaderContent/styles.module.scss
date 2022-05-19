@@ -1,0 +1,13 @@
+@import '../../styles/global.scss';
+
+.header {
+    display: grid;
+    grid:
+        'logo .' 1fr
+        / 150px auto;
+    width: 100%;
+}
+
+.logo {
+    grid-area: logo;
+}

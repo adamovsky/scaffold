@@ -17,7 +17,7 @@ All these conventions are meant to provide cues for discussions. If we ever need
 -   Do not put any margin CSS (e.g. `margin-top`, `margin-bottom`) inside a component's outermost styles.
 -   Only use CSS properties that are absolutely necessary. Do not add superfluous styles.
 -   Do not use CSS shorthand properties as it makes it harder to override.
--   Try not to use `top` and `left`, instead use margins.
+-   Try not to use `top` and `left`, instead use margins or gap.
 -   Try to generally give elements only top and left margins for positioning purposes.
 -   Make sure to get the color hex values from the design (do not guess / eyeball the color).
 -   Always use the semantic colors from `styles/colors.scss`, never the color variables directly.
@@ -51,6 +51,7 @@ All these conventions are meant to provide cues for discussions. If we ever need
 -   Move all service calls to a file called `data.js` inside the page folder
 -   Move all constants to a file called `constants.js` inside the component folder.
 -   Move all component logic to a file called `index.js` inside the component folder.
+-   No component should need more than one HTML tag.
 -   Each HTML tag is an opportunity to break it out into its own component.
 -   Do not allow overriding CSS of an internal component of a composed component.
 -   No component should ever need to have over 100 lines of code.

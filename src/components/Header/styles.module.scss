@@ -1,23 +1,6 @@
-@import '../../styles/global.scss';
+@import 'styles/global.scss';
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 23px 15px 10px;
+    background-color: $headerBackgroundColor;
     width: 100%;
-}
-
-@include tabletAndAbove {
-    .header {
-        width: 100%;
-    }
-}
-
-@include desktopAndAbove {
-    .header {
-        max-width: 1440px;
-        padding-bottom: 23px;
-        padding-right: 62px;
-        padding-top: 20px;
-    }
 }

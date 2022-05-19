@@ -1,8 +1,18 @@
+// IMPORTANT REMINDER: Always keep this alphabetized!
+
 // Colors
 $black: #000000;
+$darkBeige: #908f87;
+$grayishYellow: #eeede6;
+$lightYellow: #fafafa;
 $white: #ffffff;
 
-// Semantic Colors - always keep this alphabetized!
+// Semantic Colors
 $backgroundColor: $white;
-$footerBackgroundColor: $black;
 $inverseTextColor: $white;
+$textColor: $darkBeige;
+
+// Component Colors
+$footerBackgroundColor: $lightYellow;
+$footerTextColor: $textColor;
+$headerBackgroundColor: $grayishYellow;

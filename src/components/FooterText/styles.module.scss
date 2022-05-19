@@ -1,0 +1,8 @@
+@import 'styles/global.scss';
+
+.footerText {
+    @include smallerFont;
+
+    color: $footerTextColor;
+    padding: 20px 0;
+}
