@@ -1,9 +1,15 @@
 import ContentContainer from 'components/ContentContainer';
 
-const Home = () => (
-    <ContentContainer>
-        <h1>Hello World!</h1>
-    </ContentContainer>
-);
+import translations from './constants';
+
+const Home = () => {
+    const { HELLO_WORLD } = translations();
+
+    return (
+        <ContentContainer>
+            <h1>{HELLO_WORLD}</h1>
+        </ContentContainer>
+    );
+};
 
 export default Home;
