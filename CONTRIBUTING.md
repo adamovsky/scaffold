@@ -42,6 +42,9 @@ All these conventions are meant to provide cues for discussions. If we ever need
 -   Do not spread props into a component, list them out.
 -   Put any configurable variables (e.g. paths, URLs) that are not coming from CMS into .env.sample
 -   Only introduce functionality you need _now_ (not in the possible future).
+-   Use more specific names if we anticipate it being less re-usable (and therefore the logic can be more specific).
+-   Use more generic names if we anticipate it being more re-usable (and therefore the logic must be more generic).
+-   Avoid possible double-negative logic (e.g. prefer `isRequired` over `notRequired`).
 
 ## React
 
