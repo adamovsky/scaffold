@@ -6,14 +6,14 @@
     ],
     "private": true,
     "dependencies": {
-        "i18next": "^21.8.4",
-        "i18next-browser-languagedetector": "^6.1.4",
-        "react": "^18.1.0",
-        "react-dom": "^18.1.0",
-        "react-i18next": "^11.16.9",
-        "react-router-dom": "^6.3.0",
+        "i18next": "^22.4.12",
+        "i18next-browser-languagedetector": "^7.0.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-i18next": "^12.2.0",
+        "react-router-dom": "^6.9.0",
         "react-scripts": "^5.0.1",
-        "recoil": "^0.7.3-alpha"
+        "recoil": "^0.7.7"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -93,21 +93,21 @@
         ]
     },
     "devDependencies": {
-        "@storybook/addon-actions": "^6.4.22",
-        "@storybook/addon-essentials": "^6.4.22",
-        "@storybook/addon-links": "^6.4.22",
-        "@storybook/builder-webpack5": "^6.4.22",
-        "@storybook/manager-webpack5": "^6.4.22",
-        "@storybook/node-logger": "^6.4.22",
-        "@storybook/preset-create-react-app": "^4.1.0",
-        "@storybook/react": "^6.4.22",
-        "@testing-library/jest-dom": "^5.16.4",
-        "@testing-library/react": "^13.1.1",
-        "@testing-library/user-event": "^14.1.1",
-        "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+        "@storybook/addon-actions": "^6.5.16",
+        "@storybook/addon-essentials": "^6.5.16",
+        "@storybook/addon-links": "^6.5.16",
+        "@storybook/builder-webpack5": "^6.5.16",
+        "@storybook/manager-webpack5": "^6.5.16",
+        "@storybook/node-logger": "^6.5.16",
+        "@storybook/preset-create-react-app": "^4.1.2",
+        "@storybook/react": "^6.5.16",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^14.0.0",
+        "@testing-library/user-event": "^14.4.3",
+        "@trivago/prettier-plugin-sort-imports": "^4.1.1",
         "eslint-output": "^3.0.1",
-        "eslint-plugin-react": "^7.29.4",
+        "eslint-plugin-react": "^7.32.2",
         "eslint-plugin-sort-keys-fix": "^1.1.2",
-        "sass": "^1.51.0"
+        "sass": "^1.59.3"
     }
 }

@@ -2,14 +2,26 @@
 
 All these conventions are meant to provide cues for discussions. If we ever need to break any of these, it does not mean we _can not_ do it, it just means we _should not_. Therefore it should be a cue for the engineer to initiate a wider discussion to see if overriding these guidelines is either the right thing to do, or if there is a better way in handling the issue at hand.
 
+This document does not cover the _why_ as it would result in a much bigger read. This document is meant to be a quick reference, but if you want to understand the _why_ simply google it (as many of them are well known) or ask your team lead.
+
+## Naming
+
+-   Give human-readable names
+-   Attempt not to use acronyms
+-   Attempt not to use abbreviations
+-   CamelCase where a space would normally be
+-   Mirror class names to the component names that they style
+
 ## Process
 
 -   Do not fix things unrelated to your task, instead open up a bug ticket for prioritization.
+-   If color variations are not really visible, talk with designer to consolidate colors.
 
 ## HTML
 
 -   Whenever possible break raw HTML blocks into reusable React Components.
 -   Do not style HTML tags globally unless for reset purposes.
+-   Do not assign `id` attributes to your components as they must be unique.
 
 ## CSS
 
@@ -30,9 +42,11 @@ All these conventions are meant to provide cues for discussions. If we ever need
 -   Write text in plain English casing and use CSS to style it (e.g. uppercase).
 -   Introduce CSS properties in the right breakpoints when they are needed, not sooner.
 -   Anything layout related should use CSS grids.
+-   One benefit of using grids is you can use `gap` instead of margins for spacing.
+-   Use flexbox for simple linear layouts.
 -   Use `px` measuring unit by default.
--   Do not mix different measuring units
--   Never ever use `!important` (instead learn about CSS specificity).
+-   Do not mix different measuring units.
+-   Never ever use `!important` (instead learn about CSS specificity) unless you absolutely need to.
 
 ## Javascript
 
@@ -45,13 +59,15 @@ All these conventions are meant to provide cues for discussions. If we ever need
 -   Use more specific names if we anticipate it being less re-usable (and therefore the logic can be more specific).
 -   Use more generic names if we anticipate it being more re-usable (and therefore the logic must be more generic).
 -   Avoid possible double-negative logic (e.g. prefer `isRequired` over `notRequired`).
+-   Do not use barrel index files.
+-   Do not use lodash helpers for simple utilities, write your own (as you don't need all use-cases).
 
 ## React
 
 -   Introduce loop construct for components only if more than three items.
 -   Pages and layouts do NOT need an associated storybook file.
 -   Each component must have an associated storybook file (`stories.js`).
--   Move all service calls to a file called `data.js` inside the page folder
+-   Move all service calls to a hook called `useData` inside the page folder
 -   Move all constants to a file called `constants.js` inside the component folder.
 -   Move all component logic to a file called `index.js` inside the component folder.
 -   No component should need more than one HTML tag.
@@ -71,6 +87,7 @@ All these conventions are meant to provide cues for discussions. If we ever need
 # PR Contents
 
 -   Always include an integration proving introduced functionality is actually needed.
+-   Include unit test with the PR that introduces the new functionality (not as a separate PR).
 
 # PR Etiquette
 

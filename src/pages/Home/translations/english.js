@@ -1,5 +1,6 @@
 const translations = {
-    helloWorld: 'Hello World'
+    hello: 'Hi there!',
+    timeSpent: 'You have been here {numberOfSeconds} seconds'
 };
 
 export default translations;

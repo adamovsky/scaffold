@@ -1,13 +1,25 @@
+import { useState } from 'react';
+
 import ContentContainer from 'components/ContentContainer';
 
-import translations from './constants';
+import useInterval from 'hooks/useInterval';
+
+import useTranslation from './hooks/useTranslation';
 
 const Home = () => {
-    const { HELLO_WORLD } = translations();
+    const [numberOfSeconds, setNumberOfSeconds] = useState(0);
+
+    const { HELLO, TIME_SPENT } = useTranslation();
+
+    useInterval(() => {
+        setNumberOfSeconds(numberOfSeconds + 1);
+    }, 1000);
 
     return (
         <ContentContainer>
-            <h1>{HELLO_WORLD}</h1>
+            <h1>{HELLO}</h1>
+
+            <p>{TIME_SPENT.replace('{numberOfSeconds}', numberOfSeconds)}</p>
         </ContentContainer>
     );
 };
