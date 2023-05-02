@@ -2,22 +2,19 @@ import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Spinner from 'components/Spinner';
+
+import useConfig from 'hooks/useConfig';
+
 import Home from 'pages/Home';
 import InternalServerError from 'pages/InternalServerError';
 import NotFoundError from 'pages/NotFoundError';
-
-import state from 'app/state';
-
-import { useRecoilValue } from 'recoil';
 
 import styles from './styles.module.scss';
 
 const loading = <Spinner />;
 
-const { configAtom } = state.app.atoms;
-
 const Content = ({ className = '' }) => {
-    const config = useRecoilValue(configAtom);
+    const config = useConfig();
 
     const { HOME, INTERNAL_SERVER_ERROR } = config;
 

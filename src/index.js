@@ -1,6 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RecoilRoot } from 'recoil';
+
+import GlobalStore from 'components/GlobalStore';
+
 import 'app/i18n';
 
 import App from 'components/App';
@@ -10,8 +12,8 @@ const root = createRoot(container);
 
 root.render(
     <StrictMode>
-        <RecoilRoot>
+        <GlobalStore>
             <App />
-        </RecoilRoot>
+        </GlobalStore>
     </StrictMode>
 );

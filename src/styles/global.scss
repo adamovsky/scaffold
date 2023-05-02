@@ -1,15 +1,15 @@
-@import './colors.scss';
-@import './fonts.scss';
-@import 'mixins/breakpoints.scss';
-@import 'mixins/lineclamp.scss';
-@import 'mixins/order.scss';
+@use './colors.scss';
+@use './fonts.scss';
+@use './mixins/breakpoints.scss';
+@use './mixins/lineclamp.scss';
+@use './mixins/order.scss';
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: $backgroundColor;
+    background-color: colors.$backgroundColor;
     display: flex;
     flex-direction: column;
     margin: 0;

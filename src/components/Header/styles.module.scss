@@ -1,4 +1,4 @@
-@import 'styles/global.scss';
+@use 'styles/colors.scss' as *;
 
 .header {
     background-color: $headerBackgroundColor;

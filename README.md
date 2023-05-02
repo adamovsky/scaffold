@@ -1,11 +1,11 @@
-# React Scaffold
+# CleanDX React Scaffold
 
-This is a lean scaffold project that allows you to get up and running very quickly.
+This is a scaffold project that allows you to get up and running very quickly while aligning with a CleanDX architecture.
 
 It uses the following technologies:
 
 -   CRA (create-react-app)
--   Recoil (no more Redux)
+-   Recoil or Redux Toolkit (configurable via .env configuration)
 -   Storybook
 -   Sass
 -   CSS modules

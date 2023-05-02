@@ -9,3 +9,7 @@ Simplicity in any architecture is key to maintainability, testability, stability
 Remember that it is more difficult to write simple code to solve complex problems than it is to write over-engineered code. The engineering within this architecture begs the engineer to take time to reason through the solution through the lens of a lesser-skilled third person.
 
 The elegance of our solutions is achieved by simplicity not complexity.
+
+## Sections
+
+-   [Global state](./GLOBAL_STATE.md)
