@@ -1,9 +1,9 @@
-import { useRecoilValue } from 'recoil';
+import useGlobalStore from './useGlobalStore';
 
-import state from 'app/state';
+const useConfig = () => {
+    const { getValue } = useGlobalStore({ namespace: 'app' });
 
-const { configAtom } = state.app.atoms;
-
-const useConfig = () => useRecoilValue(configAtom);
+    return getValue('config');
+};
 
 export default useConfig;

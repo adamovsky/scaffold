@@ -36,6 +36,7 @@ This document does not cover the _why_ as it would result in a much bigger read.
 -   When defining a new font, include the responsiveness in the mixin.
 -   Try not to set fixed heights, allow content to define height.
 -   Only import `global.scss` into your `styles.module.scss`.
+-   Use `@use` in SCSS rather than `@import`.
 -   Try not to nest CSS selectors unless they are pseudo-selectors (e.g. `:hover`).
 -   Always assign a class name to the root element of a component that reflects the component name.
 -   Consumer of component controls positioning, spacing, and z-index.
@@ -51,6 +52,7 @@ This document does not cover the _why_ as it would result in a much bigger read.
 ## Javascript
 
 -   Always use the optional chaining operator instead of binary operator.
+-   Reduce unnecessary use of optional chaining operator.
 -   Always reference files via their absolute path (e.g. `components/Logo`) rather than their relative path.
 -   Do not use switch statements.
 -   Do not spread props into a component, list them out.
@@ -108,6 +110,12 @@ An engineer should be able to quickly and accurately review a PR within a few mi
 
 To solve a problem we want to break it down from the outside inward.
 
+First, we create the empty container to form an integration point.
+
+Second, we build the components that will be integrated into the container.
+
+Third,s we assemble the components into a polished deliverable.
+
 ### Example
 
 Let's take a page with a form on it.
@@ -122,3 +130,4 @@ This sequence makes every solution isolated and therefore easy to review, troubl
 # Opinions
 
 -   Favor CSS modules using SCSS rather than styled components.
+-   Do not use CSS-in-JS.
