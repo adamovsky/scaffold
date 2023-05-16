@@ -9,17 +9,19 @@ import Home from 'pages/Home';
 import InternalServerError from 'pages/InternalServerError';
 import NotFoundError from 'pages/NotFoundError';
 
+import { TEST_ID } from './constants';
+
 import styles from './styles.module.scss';
 
 const loading = <Spinner />;
 
-const Content = ({ className = '' }) => {
+const Content = ({ className = '', testId = TEST_ID }) => {
     const config = useConfig();
 
     const { HOME, INTERNAL_SERVER_ERROR } = config;
 
     return (
-        <main className={`${className} ${styles.content}`}>
+        <main className={`${className} ${styles.content}`} data-testid={testId}>
             <Suspense fallback={loading}>
                 <Routes>
                     <Route element={<Home />} path={HOME} />
