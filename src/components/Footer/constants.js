@@ -1,1 +1,1 @@
-export const creditText = `This website was built using Milan Adamovsky's scaffold`;
+export const TEST_ID = 'footer';

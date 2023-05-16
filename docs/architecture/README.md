@@ -13,3 +13,5 @@ The elegance of our solutions is achieved by simplicity not complexity.
 ## Sections
 
 -   [Global state](./GLOBAL_STATE.md)
+-   [Internationalization](./I18N.md)
+-   [Testing](./TESTING.md)
