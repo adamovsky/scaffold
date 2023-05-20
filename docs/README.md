@@ -8,4 +8,5 @@ If you need to document your code then it's too complicated.
 
 # Overview
 
+-   [Usage](usage)
 -   [Architecture](architecture)
