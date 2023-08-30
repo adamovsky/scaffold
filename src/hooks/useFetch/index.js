@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import useConfig from 'hooks/useConfig';
 
-const useFetch = ({ headers, json = true }) => {
+const useFetch = ({ headers }) => {
     const { API_HOST } = useConfig();
 
     const resolveHost = useCallback(
