@@ -1,0 +1,8 @@
+@use 'styles/fonts.scss' as *;
+@use 'styles/colors.scss' as *;
+
+.pageTitle {
+    @include biggestFont;
+
+    color: var(--pageTitle-color, $titleColor);
+}

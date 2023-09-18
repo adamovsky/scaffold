@@ -76,6 +76,8 @@ This document does not cover the _why_ as it would result in a much bigger read.
 -   Each HTML tag is an opportunity to break it out into its own component.
 -   Do not allow overriding CSS of an internal component of a composed component.
 -   No component should ever need to have over 100 lines of code.
+-   Favor `text` prop usage for text rather than `children`
+-   When both `text` and `children` props are passed, `children` has precedence.
 
 ## Assets
 

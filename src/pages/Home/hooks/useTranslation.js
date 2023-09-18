@@ -4,6 +4,7 @@ const useConstants = () => {
     const t = useTranslate('home');
 
     return {
+        CLICK_ME: t('clickMe'),
         HELLO: t('hello'),
         TIME_SPENT: t('timeSpent')
     };
