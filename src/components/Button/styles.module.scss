@@ -1,0 +1,17 @@
+@import 'styles/global.scss';
+
+.button {
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 11px 22px;
+    width: 100%;
+
+    &:disabled {
+        cursor: default;
+        opacity: 0.5;
+    }
+}
