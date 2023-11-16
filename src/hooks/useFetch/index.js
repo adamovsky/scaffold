@@ -1,97 +1,164 @@
 import { useCallback } from 'react';
 
-import useConfig from 'hooks/useConfig';
+import useAccessToken from 'hooks/useAccessToken';
 
-const useFetch = ({ headers }) => {
-    const { API_HOST } = useConfig();
+import useTranslation from './hooks/useTranslation';
 
-    const resolveHost = useCallback(
-        url => (url.startsWith('/') ? `${API_HOST}${url}` : url),
-        [API_HOST]
-    );
+const API_HOST = '';
 
-    const httpRequest = useCallback(
-        async (url = '', requestData, options = {}) => {
-            const requestOptions = {
-                body: requestData,
-                cache: 'no-cache',
-                redirect: 'follow',
-                ...options,
-                headers: new Headers({
-                    ...headers,
-                    ...options.headers
-                })
-            };
+const useFetch = ({ headers = {} } = {}) => {
+  const { fetchToken } = useAccessToken();
 
-            const endpoint = resolveHost(url);
+  const { API_ERROR } = useTranslation();
 
-            let data, error;
+  const resolveHost = useCallback(
+    (url) => (url.startsWith('/') ? `${API_HOST}${url}` : url),
+    [],
+  );
 
-            try {
-                const response = await fetch(endpoint, requestOptions);
+  const httpRequest = useCallback(
+    async (url = '', requestData, options = {}) => {
+      const requestOptions = {
+        body: requestData,
+        cache: 'no-cache',
+        redirect: 'follow',
+        ...options,
+        headers: new Headers({
+          ...headers,
+          ...options.headers,
+        }),
+      };
 
-                // data = json ? await response.json() : response;
-                data = await response.json();
-            } catch (e) {
-                error = e;
-            }
+      const endpoint = resolveHost(url);
 
-            return { data, error };
+      let data, error;
+
+      try {
+        const response = await fetch(endpoint, requestOptions);
+
+        if (!response.ok) {
+          throw new Error(response.status.toString());
+        }
+
+        const body = await response.text();
+
+        if (body) {
+          data = JSON.parse(body);
+        } else {
+          data = {};
+        }
+      } catch (e) {
+        error = e;
+      }
+
+      return { data, error };
+    },
+    [headers, resolveHost],
+  );
+
+  const httpGet = useCallback(
+    async (url = '', data, options = {}) => {
+      const requestOptions = {
+        ...options,
+        method: 'GET',
+      };
+
+      return await httpRequest(url, data, requestOptions);
+    },
+    [httpRequest],
+  );
+
+  const httpPost = useCallback(
+    async (url = '', data, options = {}) => {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
         },
-        [headers, resolveHost]
-    );
 
-    const httpGet = useCallback(
-        async (url = '', data, options = {}) => {
-            const requestOptions = {
-                ...options,
-                method: 'GET'
-            };
+        ...options,
+        method: 'POST',
+      };
 
-            return await httpRequest(url, data, requestOptions);
+      return await httpRequest(url, data, requestOptions);
+    },
+    [httpRequest],
+  );
+
+  const httpPut = useCallback(
+    async (url = '', data, options = {}) => {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
         },
-        [httpRequest]
-    );
+        ...options,
+        method: 'PUT',
+      };
 
-    const httpAuth = useCallback(
-        async (url = '', data, options = {}) => {
-            const token = localStorage?.getItem('accessToken');
+      return await httpRequest(url, data, requestOptions);
+    },
+    [httpRequest],
+  );
 
-            const bearer = `Bearer ${token}`;
+  const authenticatedRequest = useCallback(
+    async (httpMethod, url = '', data, options = {}) => {
+      const token = await fetchToken();
 
-            const requestOptions = {
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    Authorization: bearer
-                },
-                ...options
-            };
+      if (!token) {
+        return {
+          data: null,
+          error: 'User not authenticated',
+        };
+      }
 
-            return await httpGet(url, data, requestOptions);
-        },
-        [httpGet]
-    );
+      const response = await httpMethod(url, data, {
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        ...options,
+      });
 
-    const httpPost = useCallback(
-        async (url = '', data, options = {}) => {
-            const requestOptions = {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                ...options,
-                method: 'POST'
-            };
+      if (response?.error) {
+        alert(`${API_ERROR}: \n${JSON.stringify(response.error)}`);
 
-            return await httpRequest(url, data, requestOptions);
-        },
-        [httpRequest]
-    );
+        return {
+          data: null,
+          error: response.error,
+        };
+      }
 
-    return {
-        httpAuth,
-        httpGet,
-        httpPost
-    };
+      return response;
+    },
+    [API_ERROR, fetchToken],
+  );
+
+  const authenticatedGet = useCallback(
+    async (url = '', data = {}, options = {}) => {
+      data = undefined;
+
+      return await authenticatedRequest(httpGet, url, data, options);
+    },
+    [authenticatedRequest, httpGet],
+  );
+
+  const authenticatedPost = useCallback(
+    async (url = '', data, options = {}) => {
+      return await authenticatedRequest(httpPost, url, data, options);
+    },
+    [authenticatedRequest, httpPost],
+  );
+
+  const authenticatedPut = useCallback(
+    async (url = '', data, options = {}) =>
+      await authenticatedRequest(httpPut, url, data, options),
+    [authenticatedRequest, httpPut],
+  );
+
+  return {
+    authenticatedGet,
+    authenticatedPost,
+    authenticatedPut,
+    httpGet,
+    httpPost,
+    httpPut,
+  };
 };
 
 export default useFetch;

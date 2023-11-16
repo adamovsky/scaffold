@@ -1,0 +1,12 @@
+@use 'styles/colors.scss';
+@use 'styles/theme.scss';
+
+@mixin formElement {
+    background-color: $inputBackgroundColor;
+    border: none;
+    border-radius: $borderRadius;
+    color: $inputTextColor;
+    outline: none;
+    padding: 20px 16px;
+    width: 100%;
+}
