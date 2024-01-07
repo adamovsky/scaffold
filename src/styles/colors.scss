@@ -5,11 +5,16 @@ $black: #000000;
 $darkBeige: #908f87;
 $grayishYellow: #eeede6;
 $lightYellow: #fafafa;
+$pink: #ffecec;
+$silver: #eaeaea;
 $white: #ffffff;
 
 // Semantic Colors
 $backgroundColor: $white;
+$borderColor: $silver;
+$errorBackgroundColor: $pink;
 $inverseTextColor: $white;
+$placeholderColor: $silver;
 $textColor: $darkBeige;
 $titleColor: $black;
 
@@ -17,3 +22,6 @@ $titleColor: $black;
 $footerBackgroundColor: $lightYellow;
 $footerTextColor: $textColor;
 $headerBackgroundColor: $grayishYellow;
+$inputBackgroundColor: $backgroundColor;
+$inputPlaceholderColor: $placeholderColor;
+$inputTextColor: $textColor;

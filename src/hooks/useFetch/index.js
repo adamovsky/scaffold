@@ -7,158 +7,161 @@ import useTranslation from './hooks/useTranslation';
 const API_HOST = '';
 
 const useFetch = ({ headers = {} } = {}) => {
-  const { fetchToken } = useAccessToken();
+    const { fetchToken } = useAccessToken();
 
-  const { API_ERROR } = useTranslation();
+    const { API_ERROR } = useTranslation();
 
-  const resolveHost = useCallback(
-    (url) => (url.startsWith('/') ? `${API_HOST}${url}` : url),
-    [],
-  );
+    const resolveHost = useCallback(
+        url => (url.startsWith('/') ? `${API_HOST}${url}` : url),
+        []
+    );
 
-  const httpRequest = useCallback(
-    async (url = '', requestData, options = {}) => {
-      const requestOptions = {
-        body: requestData,
-        cache: 'no-cache',
-        redirect: 'follow',
-        ...options,
-        headers: new Headers({
-          ...headers,
-          ...options.headers,
-        }),
-      };
+    const httpRequest = useCallback(
+        async (url = '', requestData, options = {}) => {
+            const requestOptions = {
+                body: requestData,
+                cache: 'no-cache',
+                redirect: 'follow',
+                ...options,
+                headers: new Headers({
+                    ...headers,
+                    ...options.headers
+                })
+            };
 
-      const endpoint = resolveHost(url);
+            const endpoint = resolveHost(url);
 
-      let data, error;
+            let data, error;
 
-      try {
-        const response = await fetch(endpoint, requestOptions);
+            try {
+                const response = await fetch(endpoint, requestOptions);
 
-        if (!response.ok) {
-          throw new Error(response.status.toString());
-        }
+                if (!response.ok) {
+                    throw new Error(response.status.toString());
+                }
 
-        const body = await response.text();
+                const body = await response.text();
 
-        if (body) {
-          data = JSON.parse(body);
-        } else {
-          data = {};
-        }
-      } catch (e) {
-        error = e;
-      }
+                if (body) {
+                    data = JSON.parse(body);
+                } else {
+                    data = {};
+                }
+            } catch (e) {
+                error = e;
+            }
 
-      return { data, error };
-    },
-    [headers, resolveHost],
-  );
-
-  const httpGet = useCallback(
-    async (url = '', data, options = {}) => {
-      const requestOptions = {
-        ...options,
-        method: 'GET',
-      };
-
-      return await httpRequest(url, data, requestOptions);
-    },
-    [httpRequest],
-  );
-
-  const httpPost = useCallback(
-    async (url = '', data, options = {}) => {
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
+            return { data, error };
         },
+        [headers, resolveHost]
+    );
 
-        ...options,
-        method: 'POST',
-      };
+    const httpGet = useCallback(
+        async (url = '', data, options = {}) => {
+            const requestOptions = {
+                ...options,
+                method: 'GET'
+            };
 
-      return await httpRequest(url, data, requestOptions);
-    },
-    [httpRequest],
-  );
-
-  const httpPut = useCallback(
-    async (url = '', data, options = {}) => {
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
+            return await httpRequest(url, data, requestOptions);
         },
-        ...options,
-        method: 'PUT',
-      };
+        [httpRequest]
+    );
 
-      return await httpRequest(url, data, requestOptions);
-    },
-    [httpRequest],
-  );
+    const httpPost = useCallback(
+        async (url = '', data, options = {}) => {
+            const requestOptions = {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
 
-  const authenticatedRequest = useCallback(
-    async (httpMethod, url = '', data, options = {}) => {
-      const token = await fetchToken();
+                ...options,
+                method: 'POST'
+            };
 
-      if (!token) {
-        return {
-          data: null,
-          error: 'User not authenticated',
-        };
-      }
+            return await httpRequest(url, data, requestOptions);
+        },
+        [httpRequest]
+    );
 
-      const response = await httpMethod(url, data, {
-        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-        ...options,
-      });
+    const httpPut = useCallback(
+        async (url = '', data, options = {}) => {
+            const requestOptions = {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                ...options,
+                method: 'PUT'
+            };
 
-      if (response?.error) {
-        alert(`${API_ERROR}: \n${JSON.stringify(response.error)}`);
+            return await httpRequest(url, data, requestOptions);
+        },
+        [httpRequest]
+    );
 
-        return {
-          data: null,
-          error: response.error,
-        };
-      }
+    const authenticatedRequest = useCallback(
+        async (httpMethod, url = '', data, options = {}) => {
+            const token = await fetchToken();
 
-      return response;
-    },
-    [API_ERROR, fetchToken],
-  );
+            if (!token) {
+                return {
+                    data: null,
+                    error: 'User not authenticated'
+                };
+            }
 
-  const authenticatedGet = useCallback(
-    async (url = '', data = {}, options = {}) => {
-      data = undefined;
+            const response = await httpMethod(url, data, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                ...options
+            });
 
-      return await authenticatedRequest(httpGet, url, data, options);
-    },
-    [authenticatedRequest, httpGet],
-  );
+            if (response?.error) {
+                alert(`${API_ERROR}: \n${JSON.stringify(response.error)}`);
 
-  const authenticatedPost = useCallback(
-    async (url = '', data, options = {}) => {
-      return await authenticatedRequest(httpPost, url, data, options);
-    },
-    [authenticatedRequest, httpPost],
-  );
+                return {
+                    data: null,
+                    error: response.error
+                };
+            }
 
-  const authenticatedPut = useCallback(
-    async (url = '', data, options = {}) =>
-      await authenticatedRequest(httpPut, url, data, options),
-    [authenticatedRequest, httpPut],
-  );
+            return response;
+        },
+        [API_ERROR, fetchToken]
+    );
 
-  return {
-    authenticatedGet,
-    authenticatedPost,
-    authenticatedPut,
-    httpGet,
-    httpPost,
-    httpPut,
-  };
+    const authenticatedGet = useCallback(
+        async (url = '', data = {}, options = {}) => {
+            data = undefined;
+
+            return await authenticatedRequest(httpGet, url, data, options);
+        },
+        [authenticatedRequest, httpGet]
+    );
+
+    const authenticatedPost = useCallback(
+        async (url = '', data, options = {}) => {
+            return await authenticatedRequest(httpPost, url, data, options);
+        },
+        [authenticatedRequest, httpPost]
+    );
+
+    const authenticatedPut = useCallback(
+        async (url = '', data, options = {}) =>
+            await authenticatedRequest(httpPut, url, data, options),
+        [authenticatedRequest, httpPut]
+    );
+
+    return {
+        authenticatedGet,
+        authenticatedPost,
+        authenticatedPut,
+        httpGet,
+        httpPost,
+        httpPut
+    };
 };
 
 export default useFetch;

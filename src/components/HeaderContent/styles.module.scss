@@ -1,11 +1,27 @@
+@use 'styles/mixins/breakpoints.scss' as *;
+
 .header {
     display: grid;
-    grid:
-        'logo .' 1fr
-        / 150px auto;
+    grid-template-columns: 150px 1fr 200px;
+    grid-template-rows: min-content 1fr;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
     width: 100%;
 }
 
 .logo {
-    grid-area: logo;
+    grid-row: 1/-1;
+}
+
+.searchInput {
+    grid-column: -1/-2;
+}
+
+@include desktopAndAbove {
+    .header {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

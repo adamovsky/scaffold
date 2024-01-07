@@ -1,5 +1,5 @@
-@use 'styles/colors.scss';
-@use 'styles/theme.scss';
+@use 'styles/colors.scss' as *;
+@use 'styles/theme.scss' as *;
 
 @mixin formElement {
     background-color: $inputBackgroundColor;

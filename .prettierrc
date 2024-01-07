@@ -3,6 +3,7 @@
     "endOfLine": "lf",
     "experimentalBabelParserPluginsList": ["jsx", "typescript"],
     "importOrder": [
+        "^(react)",
         "^@",
         "^(components/)",
         "^(contexts/)",
