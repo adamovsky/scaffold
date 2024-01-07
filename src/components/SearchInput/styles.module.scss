@@ -1,0 +1,20 @@
+@use 'styles/colors.scss' as *;
+@use 'styles/theme.scss' as *;
+
+.input {
+    border: 1px solid $borderColor;
+    padding-right: 45px;
+}
+
+.searchIcon {
+    align-self: center;
+    justify-self: center;
+    right: 15px;
+    position: absolute;
+    width: $smallIconSize;
+}
+
+.searchInput {
+    display: grid;
+    position: relative;
+}

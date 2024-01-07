@@ -68,8 +68,6 @@ const Input = forwardRef((props, ref) => {
 
     const errorClassName = hasError || error ? styles.hasError : '';
 
-    console.log('[Input] value: ', props);
-
     return (
         <input
             className={`${className} ${errorClassName} ${styles.input}`}

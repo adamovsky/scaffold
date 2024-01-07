@@ -7,7 +7,7 @@ import { ALT_TEXT, TEST_ID } from './constants';
 import styles from './styles.module.scss';
 
 const Logo = ({ className = '', testId = TEST_ID }) => (
-    <Link className={styles.logo} data-testid={testId} to="/">
+    <Link className={`${className} ${styles.logo}`} data-testid={testId} to="/">
         <img
             alt={ALT_TEXT}
             className={`${className} ${styles.image}`}

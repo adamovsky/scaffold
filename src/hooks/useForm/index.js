@@ -21,9 +21,10 @@ const useForm = formSchema => {
     const buildFormData = useCallback(
         formValues =>
             formKeys.reduce((form, formKey) => {
-                const formData = formValues[formKey].constructor !== Array
-                    ? formValues[formKey]
-                    : JSON.stringify(formValues[formKey]);
+                const formData =
+                    formValues[formKey].constructor !== Array
+                        ? formValues[formKey]
+                        : JSON.stringify(formValues[formKey]);
 
                 form.append(formKey, formData);
 
@@ -77,12 +78,9 @@ const useForm = formSchema => {
             const updatedFormData = { ...formData.current };
             const updatedFormErrors = { ...formErrors.current };
 
-            console.log(formField, ' -> ', fieldValue.target.checked);
-
             updatedFormErrors[formField] = false;
-            updatedFormData[formField] = fieldValue.target.checked;
-
-            console.log({ updatedFormData });
+            updatedFormData[formField] =
+                fieldValue?.target?.checked ?? fieldValue;
 
             setForm(updatedFormData);
             setFormData(updatedFormData);
@@ -93,8 +91,6 @@ const useForm = formSchema => {
 
     const handleChange = useCallback(
         formField => newValue => {
-            console.log('Changed value to new value: ', newValue);
-
             handleValid(formField)(newValue);
         },
         [handleValid]
