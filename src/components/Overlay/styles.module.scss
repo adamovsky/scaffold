@@ -1,0 +1,15 @@
+@use 'styles/colors.scss' as *;
+
+.overlay {
+    background-color: $overlayBackgroundColor;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+
+    &.show {
+        visibility: visible;
+    }
+}
