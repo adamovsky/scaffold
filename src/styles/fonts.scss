@@ -1,10 +1,23 @@
+@use 'sass:meta';
+
 @use './mixins/breakpoints.scss';
 
 $arial: Arial;
 
+@mixin makeBold($mixin) {
+    @include meta.apply($mixin);
+
+    font-weight: 500;
+}
+
 @mixin biggestFont {
     font-family: $arial;
     font-size: 22px;
+}
+
+@mixin normalFont {
+    font-family: $arial;
+    font-size: 14px;
 }
 
 @mixin smallerFont {

@@ -7,6 +7,7 @@ $grayishYellow: #eeede6;
 $lightYellow: #fafafa;
 $pink: #ffecec;
 $silver: #eaeaea;
+$transparentBlack: #00000010;
 $white: #ffffff;
 
 // Semantic Colors
@@ -25,3 +26,6 @@ $headerBackgroundColor: $grayishYellow;
 $inputBackgroundColor: $backgroundColor;
 $inputPlaceholderColor: $placeholderColor;
 $inputTextColor: $textColor;
+$menuBorderColor: $borderColor;
+$menuItemBackgroundColor: $backgroundColor;
+$overlayBackgroundColor: $transparentBlack;

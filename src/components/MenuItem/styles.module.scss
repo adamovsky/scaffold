@@ -1,0 +1,25 @@
+@use 'styles/colors.scss' as *;
+@use 'styles/fonts.scss' as *;
+
+.menuItem {
+    @include normalFont;
+
+    background-color: $menuItemBackgroundColor;
+    padding: 10px;
+    white-space: nowrap;
+    width: 100%;
+
+    &:first-child {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    &:hover {
+        background-color: #eaeaea;
+    }
+}

@@ -1,0 +1,12 @@
+@use 'styles/colors.scss' as *;
+@use 'styles/fonts.scss' as *;
+
+.menu {
+    @include normalFont;
+
+    border: 3px solid $menuBorderColor;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+}
