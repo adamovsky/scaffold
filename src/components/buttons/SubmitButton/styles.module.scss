@@ -1,0 +1,16 @@
+@use 'styles/fonts.scss' as *;
+@use 'styles/colors.scss' as *;
+
+.submitButton {
+    @include bolderNormalFont;
+
+    background-color: $submitButtonBackgroundColor;
+    box-shadow: 0px 8px 16px $submitButtonShadowColor;
+    color: $submitButtonTextColor;
+    transition-duration: 0.25s;
+
+    &:not(.disabled):hover {
+        box-shadow: 0px 4px 12px $submitButtonShadowColor;
+        transform: translateY(4px);
+    }
+}

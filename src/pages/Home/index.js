@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-import Button from 'components/Button';
+import Button from 'components/buttons/Button';
 import ContentContainer from 'components/ContentContainer';
 import PageTitle from 'components/PageTitle';
 
