@@ -1,0 +1,16 @@
+.errorMessage {
+    grid-row: 3/4;
+}
+
+.panelBody {
+    gap: 2px;
+    grid-template-rows: auto max-content max-content max-content auto;
+}
+
+.submitButton {
+    grid-row: 4/5;
+}
+
+.textInput {
+    grid-row: 2/3;
+}

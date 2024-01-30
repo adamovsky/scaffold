@@ -1,0 +1,34 @@
+@use 'styles/fonts.scss' as *;
+@use 'styles/colors.scss' as *;
+
+.inputLabel {
+    @include normalFont;
+
+    background-color: $inputBackgroundColor;
+    border-radius: $borderRadius;
+    border: 1px solid $inputBorderColor;
+    color: $bodyTextColor;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    text-align: left;
+
+    &.hasFocus {
+        border-color: $focusedInputBorderColor;
+        box-shadow: 0 0 0 1px $focusedInputBorderColor;
+    }
+}
+
+.legend {
+    @include smallerFont;
+
+    background-color: $inputBackgroundColor;
+    color: $inputLabelLegendTextColor;
+    margin-left: 8px;
+    padding: 0 4px;
+    white-space: nowrap;
+
+    &.hasFocus {
+        color: $focusedInputLabelColor;
+    }
+}
