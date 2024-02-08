@@ -1,0 +1,19 @@
+@use 'styles/colors.scss' as *;
+
+.dropdownItem {
+    border-radius: 8px;
+    padding: 15px;
+
+    &:hover {
+        background-color: $dropdownHoverBackgroundColor;
+        cursor: pointer;
+    }
+}
+
+.option {
+    display: none;
+}
+
+.subItem {
+    padding-left: 50px;
+}
