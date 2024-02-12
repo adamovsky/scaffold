@@ -1,16 +1,16 @@
 import { forwardRef } from 'react';
 
-import Input from 'components/form/Input';
 import InputWithLabel from 'components/InputWithLabel';
+import Input from 'components/form/Input';
 
 import styles from './styles.module.scss';
 
 const TextInput = forwardRef((props, ref) => {
     const {
         className = '',
+        hasError = false,
         id = '',
         isRequired = false,
-        hasError = false,
         label = '',
         name = '',
         onChange,

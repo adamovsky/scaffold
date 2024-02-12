@@ -4,7 +4,6 @@ import Menu from 'components/Menu';
 import Overlay from 'components/Overlay';
 
 import { TEST_ID } from './constants';
-
 import { FunctionComponent, MouseEvent, Props } from './types';
 
 import styles from './styles.module.scss';
@@ -12,8 +11,8 @@ import styles from './styles.module.scss';
 const WithMenu: FunctionComponent<Props> = ({
     children,
     className = '',
-    onClick,
     items,
+    onClick,
     testId = TEST_ID
 }) => {
     const ref = useRef<HTMLDivElement | null>(null);

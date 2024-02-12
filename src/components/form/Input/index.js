@@ -5,11 +5,11 @@ import styles from './styles.module.scss';
 const Input = forwardRef((props, ref) => {
     const {
         className = '',
+        hasError = false,
         id = '',
         isDisabled = false,
         isReadOnly = false,
         isRequired = false,
-        hasError = false,
         name = '',
         onBlur,
         onChange,

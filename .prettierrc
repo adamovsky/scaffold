@@ -1,12 +1,13 @@
 {
     "arrowParens": "avoid",
     "endOfLine": "lf",
-    "experimentalBabelParserPluginsList": ["jsx", "typescript"],
+    "importOrderParserPlugins": ["jsx", "typescript"],
     "importOrder": [
-        "^(react)",
         "^@",
+        "^(app/)",
         "^(components/)",
         "^(contexts/)",
+        "^(hooks/)",
         "^(layouts/)",
         "^(pages/)",
         "^(typings)",
@@ -15,13 +16,16 @@
         "(.jpg)$",
         "(.png)$",
         "(.svg)$",
+        "^(./hooks)",
         "^(?!(./styles))(./)",
-        "^(./styles)"
+        "^(./styles)",
+        "^.$"
     ],
     "importOrderSeparation": true,
     "importOrderSortSpecifiers": true,
     "semi": true,
     "singleQuote": true,
     "tabWidth": 4,
-    "trailingComma": "none"
+    "trailingComma": "none",
+    "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

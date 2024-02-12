@@ -1,13 +1,14 @@
 import { forwardRef, useCallback, useEffect, useRef, useState } from 'react';
 
 import DropdownItem from 'components/DropdownItem';
+import DropdownMenu from 'components/DropdownMenu';
 import Input from 'components/Input';
 import InputWithLabel from 'components/InputWithLabel';
-import DropdownMenu from 'components/DropdownMenu';
 import Select from 'components/Select';
 
-import useConstants from './hooks/useTranslation';
 import usePopperState from 'hooks/usePopperState';
+
+import useConstants from './hooks/useTranslation';
 
 import { TEST_ID } from './constants';
 

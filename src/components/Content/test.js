@@ -1,13 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import testComponent from 'helpers/testComponent';
 import { BrowserRouter } from 'react-router-dom';
+
+import { render, screen } from '@testing-library/react';
 
 import GlobalStore from 'components/GlobalStore';
 
-import testComponent from 'helpers/testComponent';
+import { TEST_ID } from './constants';
 
 import Content from '.';
-
-import { TEST_ID } from './constants';
 
 const ComponentWithStore = props => (
     <BrowserRouter>

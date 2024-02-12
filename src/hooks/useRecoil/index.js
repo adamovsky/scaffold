@@ -1,4 +1,4 @@
-import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 
 import store from 'app/state';
 
