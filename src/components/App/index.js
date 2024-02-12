@@ -1,7 +1,8 @@
 import { Suspense } from 'react';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Spinner from 'components/Spinner';
+
 import MainLayout from 'layouts/MainLayout';
 
 import './state';

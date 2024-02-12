@@ -1,9 +1,6 @@
 export type { FunctionComponent, MouseEvent } from 'react';
 
-export type OnClick = (
-    event: MouseEventHandler<HTMLDivElement>,
-    index: number
-) => void;
+type OnClick = (_event: MouseEventHandler<HTMLDivElement>) => void;
 
 export type Props = {
     children?: ReactNode;

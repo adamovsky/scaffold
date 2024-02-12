@@ -1,8 +1,9 @@
-import useForm from 'hooks/useForm';
 import { useCallback, useRef } from 'react';
 
 import Logo from 'components/Logo';
 import SearchInput from 'components/SearchInput';
+
+import useForm from 'hooks/useForm';
 
 import handleSubmitOnEnter from 'utilities/handleSubmitOnEnter';
 

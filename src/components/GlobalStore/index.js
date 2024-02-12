@@ -1,11 +1,10 @@
 import { useRef } from 'react';
-
 import { Provider } from 'react-redux';
 import { RecoilRoot } from 'recoil';
 
-import CONFIG from 'utilities/env';
-
 import store from 'app/store';
+
+import CONFIG from 'utilities/env';
 
 const GlobalStore = ({ children }) => {
     const storeMap = useRef({

@@ -1,0 +1,62 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "color-hex-length": "long",
+
+    "media-feature-name-no-unknown": [
+      true,
+      {
+        "ignoreMediaFeatureNames": [
+          "min-device-pixel-ratio"
+        ]
+      }
+    ],
+
+    "order/properties-alphabetical-order": true,
+    
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": ["after-single-line-comment"],
+        "ignore": ["first-nested"] 
+      }
+    ],
+
+    "scss/at-mixin-pattern": [
+			"[^-_]+",
+			{
+				"message": "Mixins cannot be kebab or snake cased"
+			}
+		],
+
+    "scss/dollar-variable-pattern": [
+			"[^-_]+",
+			{
+				"message": "Variables cannot be kebab or snake cased"
+			}
+		],
+
+    "selector-class-pattern": [
+      "[^-_]+",
+      {
+        "message": "Classes cannot be kebab or snake cased"
+      }
+    ],
+
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["export", "global"]
+      }
+    ],
+
+    "value-keyword-case": [
+      "lower",
+      {
+        "ignoreKeywords": "/^$.+/",
+        "ignoreFunctions": "/^$/"
+      }
+    ]
+  }
+}

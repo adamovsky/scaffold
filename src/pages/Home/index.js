@@ -1,8 +1,8 @@
 import { useCallback, useState } from 'react';
 
-import Button from 'components/buttons/Button';
 import ContentContainer from 'components/ContentContainer';
 import PageTitle from 'components/PageTitle';
+import Button from 'components/buttons/Button';
 
 import useInterval from 'hooks/useInterval';
 

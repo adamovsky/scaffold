@@ -28,47 +28,11 @@
         "prepare": "git config --local core.hooksPath .githooks || echo 'Can not set git hooks'",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
         "lint:coverage": "eslint-output --max-warnings 5 --color .",
+        "lint:css": "stylelint **/*.scss",
+        "lint:css:fix": "stylelint **/*.scss --fix",
         "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx --fix ./src",
         "format": "prettier --check  \"src/**/*.{js,jsx,ts,tsx}\"",
         "format:fix": "prettier --write  \"src/**/*.{js,jsx,ts,tsx}\""
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ],
-        "plugins": [
-            "sort-keys-fix"
-        ],
-        "rules": {
-            "sort-keys-fix/sort-keys-fix": [
-                1,
-                "asc",
-                {
-                    "natural": true
-                }
-            ],
-            "react/jsx-newline": [
-                2,
-                {
-                    "prevent": false
-                }
-            ],
-            "react/jsx-sort-props": [
-                1,
-                {
-                    "multiline": "first"
-                }
-            ],
-            "no-unused-vars": [
-                "error",
-                {
-                    "argsIgnorePattern": "^_",
-                    "varsIgnorePattern": "^_",
-                    "caughtErrorsIgnorePattern": "^_"
-                }
-            ]
-        }
     },
     "browserslist": {
         "production": [
@@ -104,15 +68,21 @@
         "@storybook/node-logger": "^6.5.16",
         "@storybook/preset-create-react-app": "^4.1.2",
         "@storybook/react": "^6.5.16",
+        "@stylistic/eslint-plugin-js": "^1.6.1",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^14.0.0",
         "@testing-library/user-event": "^14.4.3",
         "@trivago/prettier-plugin-sort-imports": "^4.1.1",
         "cross-env": "^7.0.3",
+        "eslint-config-prettier": "^8.8.0",
         "eslint-output": "^3.0.1",
         "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-sort-destructure-keys": "^1.5.0",
         "eslint-plugin-sort-keys-fix": "^1.1.2",
-        "sass": "^1.59.3"
+        "sass": "^1.59.3",
+        "stylelint": "^16.1.0",
+        "stylelint-config-standard-scss": "^13.0.0",
+        "stylelint-order": "^6.0.4"
     },
     "jest": {
         "coveragePathIgnorePatterns": [

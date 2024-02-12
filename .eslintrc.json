@@ -1,0 +1,96 @@
+{
+    "extends": [
+        "react-app",
+        "react-app/jest"
+    ],
+    "plugins": [
+        "@stylistic/js",
+        "sort-destructure-keys",
+        "sort-keys-fix"
+    ],
+    "rules": {
+        "arrow-body-style": [
+            "error",
+            "as-needed"
+        ],
+
+        "curly": "error",
+
+        "indent": [
+            "error",
+            4
+        ],
+
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_",
+                "varsIgnorePattern": "^_",
+                "caughtErrorsIgnorePattern": "^_"
+            }
+        ],
+
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": "return"
+            },
+            {
+                "blankLine": "always",
+                "prev": [
+                    "const",
+                    "let",
+                    "var"
+                ],
+                "next": "*"
+            },
+            {
+                "blankLine": "any",
+                "prev": [
+                    "const",
+                    "let",
+                    "var"
+                ],
+                "next": [
+                    "const",
+                    "let",
+                    "var"
+                ]
+            }
+        ],
+
+        "prefer-const": "error",
+
+        "react/jsx-newline": [
+            "error",
+            {
+                "prevent": false
+            }
+        ],
+
+        "react/jsx-sort-props": [
+            "warn",
+            {
+                "multiline": "first"
+            }
+        ],
+
+        "react/prop-types": [
+            "off"
+        ],
+
+        "react-hooks/exhaustive-deps": ["error"],
+
+        "sort-destructure-keys/sort-destructure-keys": 2,
+
+        "sort-keys-fix/sort-keys-fix": [
+            "warn",
+            "asc",
+            {
+                "natural": true
+            }
+        ]
+    }
+}

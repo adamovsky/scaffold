@@ -142,9 +142,8 @@ const useFetch = ({ headers = {} } = {}) => {
     );
 
     const authenticatedPost = useCallback(
-        async (url = '', data, options = {}) => {
-            return await authenticatedRequest(httpPost, url, data, options);
-        },
+        async (url = '', data, options = {}) =>
+            await authenticatedRequest(httpPost, url, data, options),
         [authenticatedRequest, httpPost]
     );
 

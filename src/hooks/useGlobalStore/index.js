@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 
-import CONFIG from 'utilities/env';
-
 import useRecoil from 'hooks/useRecoil';
 import useReduxToolkit from 'hooks/useReduxToolkit';
+
+import CONFIG from 'utilities/env';
 
 const useGlobalStore = ({ namespace }) => {
     const storeMap = useRef({

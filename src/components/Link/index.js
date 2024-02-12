@@ -2,7 +2,7 @@ import { Link as OriginalLink } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 
-const Link = ({ className = '', children, onClick, target, to }) => {
+const Link = ({ children, className = '', onClick, target, to }) => {
     const linkTo = /^\//.test(to) ? to : { pathname: to };
 
     return (
