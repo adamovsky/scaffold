@@ -1,0 +1,12 @@
+@import 'src/styles/global.scss';
+
+.checkboxWithLabel {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+}
+
+.label {
+    cursor: pointer;
+}

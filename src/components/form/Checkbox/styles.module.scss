@@ -1,0 +1,53 @@
+@use 'styles/colors.scss' as *;
+
+.checkbox {
+    cursor: pointer;
+    display: block;
+    height: 18px;
+    position: relative;
+    width: 18px;
+    overflow: hidden;
+}
+
+.checkbox .input {
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
+}
+
+.checkmark {
+    border: 1px solid $checkboxBorderColor;
+    border-radius: 3px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.checkbox .input:checked ~ .checkmark {
+    background-color: $checkboxColor;
+    border-color: $transparent;
+}
+
+.checkmark:after {
+    content: '';
+    display: none;
+    position: absolute;
+}
+
+.checkbox .input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox .checkmark:after {
+    border: solid $checkboxCheckColor;
+    border-width: 0 2px 2px 0;
+    height: 8px;
+    left: 50%;
+    top: 50%;
+    transform: rotate(45deg) translate(-120%, -30%);
+    width: 3px;
+}
