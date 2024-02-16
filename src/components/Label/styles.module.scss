@@ -1,0 +1,7 @@
+@use 'styles/fonts.scss' as *;
+
+.label {
+    @include largeFont;
+
+    user-select: none;
+}
