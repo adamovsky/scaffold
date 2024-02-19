@@ -1,0 +1,12 @@
+@import 'styles/global.scss';
+
+.contentPanel {
+    background-color: $contentPanelBackgroundColor;
+    border-radius: $contentPanelBorderRadius;
+    box-shadow: 0px 6px 12px $contentShadowColor;
+    width: 100%;
+
+    @include mobileOnly {
+        padding: 10px;
+    }
+}
