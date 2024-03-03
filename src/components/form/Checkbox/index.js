@@ -1,6 +1,6 @@
-import styles from './styles.module.scss';
-
 import { TEST_ID } from './constants';
+
+import styles from './styles.module.scss';
 
 const Checkbox = ({
     className = '',
