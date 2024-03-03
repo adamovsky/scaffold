@@ -1,0 +1,13 @@
+@use 'styles/colors.scss' as *;
+
+.dropdownMenu {
+    width: fit-content;
+}
+
+.input {
+    cursor: pointer;
+
+    &.hasError {
+        background-color: $errorBackgroundColor;
+    }
+}

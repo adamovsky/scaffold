@@ -3,7 +3,14 @@ import Checkbox from 'components/form/Checkbox';
 import { TEST_ID } from './constants';
 
 const WithCheckbox = props => {
-    const { children, className = '', isChecked, isDisabled, onChange, testId = TEST_ID } = props;
+    const {
+        children,
+        className = '',
+        isChecked,
+        isDisabled,
+        onChange,
+        testId = TEST_ID
+    } = props;
 
     return (
         <>

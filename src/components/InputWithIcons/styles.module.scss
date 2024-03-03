@@ -1,0 +1,15 @@
+@import 'styles/global.scss';
+
+.icons {
+    display: grid;
+    grid-template-rows: 20px;
+}
+
+.inputWithIcons {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    padding-right: 12px;
+    position: relative;
+    width: 100%;
+}
