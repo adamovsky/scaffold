@@ -1,0 +1,13 @@
+@use 'styles/functions/rem' as *;
+@use 'styles/colors' as *;
+
+.highlightTabs {
+    border-bottom: rem(1px) solid $highlightTabsBorderBottom;
+    display: flex;
+    flex-direction: row;
+    gap: rem(22px);
+    justify-content: unset;
+    margin: unset;
+    position: relative;
+    width: 100%;
+}

@@ -1,0 +1,10 @@
+@use 'styles/functions/rem' as *;
+@use 'styles/colors' as *;
+
+.highlight {
+    border-bottom: 5px solid $highlightTabActiveColor;
+    bottom: rem(-2.5px);
+    position: absolute;
+    transition: 0.25s ease-out;
+    width: 100%;
+}

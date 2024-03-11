@@ -1,0 +1,19 @@
+@use 'styles/colors' as *;
+@use 'styles/functions/rem' as *;
+@use 'styles/mixins/fonts' as *;
+
+.tab {
+    @include largeFont;
+
+    color: $tabInactiveColor;
+    cursor: pointer;
+    display: flex;
+    font-weight: 500;
+    padding: rem(10px);
+    text-align: center;
+}
+
+.tabActive {
+    color: $tabActiveColor;
+    font-weight: 700;
+}

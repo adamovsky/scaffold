@@ -1,0 +1,18 @@
+@use 'styles/functions/rem' as *;
+@use 'styles/mixins/fonts' as *;
+@use 'styles/colors' as *;
+
+.highlightTab {
+    @include largerFont;
+
+    color: $highlightTabTextColor;
+    cursor: pointer;
+    display: flex;
+    font-weight: 500;
+    padding-bottom: rem(20px);
+    text-align: center;
+}
+
+.tabActive {
+    color: $highlightTabActiveColor;
+}
