@@ -1,11 +1,12 @@
 @use 'styles/colors.scss' as *;
 
 .contentPanel {
-    max-height: 30vh;
     overflow: auto;
     padding: 5px 0;
 }
 
-.overlay {
-    background-color: $transparent;
+.dropdownMenu {
+    max-height: 50vh;
+    position: absolute;
+    z-index: 1;
 }

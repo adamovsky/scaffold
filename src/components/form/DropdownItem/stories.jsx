@@ -1,5 +1,3 @@
-import { useRef } from 'react';
-
 import DropdownItem from './index';
 
 const story = {
@@ -9,14 +7,10 @@ const story = {
 
 export default story;
 
-const Template = args => {
-    const ref = useRef();
-
-    return <DropdownItem ref={ref} {...args} />;
-};
+const Template = args => <DropdownItem {...args} />;
 
 export const Primary = Template.bind({});
 
-Primary.args = {
+Primary.defaultProps = {
     text: 'Dropdown item'
 };

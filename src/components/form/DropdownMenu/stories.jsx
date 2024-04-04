@@ -1,4 +1,5 @@
 import DropdownMenu from './index';
+import { FunctionComponent, Props } from './types';
 
 const story = {
     component: DropdownMenu,
@@ -7,8 +8,8 @@ const story = {
 
 export default story;
 
-const Template = args => <DropdownMenu {...args} />;
+const Template: FunctionComponent<Props> = args => <DropdownMenu {...args} />;
 
 export const Primary = Template.bind({});
 
-Primary.args = {};
+Primary.defaultProps = {};
