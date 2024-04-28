@@ -4,6 +4,7 @@ const useTranslation = () => {
     const t = useTranslate('dropdown');
 
     return {
+        REQUIRED: t('required'),
         SELECT: t('select')
     };
 };

@@ -1,8 +1,9 @@
 @use 'styles/colors.scss' as *;
+@use 'styles/functions/rem' as *;
 
 .dropdownItem {
-    border-radius: 8px;
-    padding: 15px;
+    border-radius: rem(8px);
+    padding: rem(15px);
 
     &:hover {
         background-color: $dropdownHoverBackgroundColor;
@@ -15,5 +16,5 @@
 }
 
 .subItem {
-    padding-left: 50px;
+    padding-left: rem(50px);
 }
